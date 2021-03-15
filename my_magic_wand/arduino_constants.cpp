@@ -1,4 +1,4 @@
-/* Copyright 2018 The TensorFlow Authors. All Rights Reserved.
+/* Copyright 2019 The TensorFlow Authors. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -13,11 +13,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "micro_features_micro_model_settings.h"
+#include "constants.h"
 
-const char* kCategoryLabels[kCategoryCount] = {
-    "silence",
-    "unknown",
-    "yes",
-    "no",
-};
+// The number of expected consecutive inferences for each gesture type.
+// Established with the Arduino Nano 33 BLE Sense.
+const int kConsecutiveInferenceThresholds[3] = {8, 5, 4};
